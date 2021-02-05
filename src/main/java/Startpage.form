@@ -286,71 +286,73 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="button_MakeA_send" min="-2" pref="80" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="24" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="label_makea_name" min="-2" pref="90" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="label_makea_type" alignment="0" max="32767" attributes="0"/>
-                          <Component id="label_makea_healthinfo" alignment="0" pref="98" max="32767" attributes="0"/>
-                          <Component id="label_makea_bday" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="combo_MakeA_healthproblem" min="-2" pref="136" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ScrollPane_MakeA_list" alignment="0" pref="355" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="radiobutton_MakeA_2km" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                      <Component id="radiobutton_MakeA_5km" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Component id="radiobutton_MakeA_10km" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="radiobutton_MakeA15km" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                                      <Component id="label_MakeA_heading2" min="-2" pref="307" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                                      <Component id="label_MakeA_heading1" min="-2" pref="389" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="label_MakeA_reminder" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="comboboy_MakeA_time" min="-2" pref="92" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="label_makea_insurancename" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
-                      <Component id="label_makea_adressinfo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtfield_makeA_adressinfo" min="-2" pref="368" max="-2" attributes="0"/>
-                      <Component id="txtfield_name" min="-2" pref="368" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_bday" alignment="0" min="-2" pref="368" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_healthinfo" alignment="0" min="-2" pref="368" max="-2" attributes="0"/>
-                      <Component id="combobox_makeA_type" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_insurancename" min="-2" pref="368" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="307" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" pref="389" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" pref="136" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" min="-2" pref="301" max="-2" attributes="0"/>
+                              <Component id="label_MakeA_name" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="label_MakeA_type" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_MakeA_healthinfo" alignment="0" pref="98" max="32767" attributes="0"/>
+                                  <Component id="label_MakeA_bday" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" min="-2" pref="92" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="label_MakeA_insurancename" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
+                              <Component id="label_MakeA_adressinfo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtfield_MakeA_adressinfo" min="-2" pref="368" max="-2" attributes="0"/>
+                              <Component id="txtfield_MakeA_name" min="-2" pref="368" max="-2" attributes="0"/>
+                              <Component id="txtfield_MakeA_bday" alignment="0" min="-2" pref="368" max="-2" attributes="0"/>
+                              <Component id="txtfield_MakeA_healthinfo" alignment="0" min="-2" pref="368" max="-2" attributes="0"/>
+                              <Component id="combobox_MakeA_type" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                              <Component id="txtfield_MakeA_insurancename" min="-2" pref="368" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="button_makea_send" min="-2" pref="80" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -358,63 +360,63 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_MakeA_heading1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_makea_name" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="txtfield_name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_name" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="txtfield_MakeA_name" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_makea_adressinfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_adressinfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_adressinfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtfield_MakeA_adressinfo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_makea_bday" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_bday" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_bday" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtfield_MakeA_bday" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_makea_healthinfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_healthinfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_healthinfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtfield_MakeA_healthinfo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_makea_type" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="combobox_makeA_type" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_type" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="combobox_MakeA_type" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_makea_insurancename" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtfield_makeA_insurancename" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_insurancename" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtfield_MakeA_insurancename" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_MakeA_heading2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="8" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="combo_MakeA_healthproblem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radiobutton_MakeA_2km" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radiobutton_MakeA_5km" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radiobutton_MakeA_10km" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radiobutton_MakeA15km" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="ScrollPane_MakeA_list" min="-2" pref="47" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_MakeA_reminder" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboboy_MakeA_time" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="button_makea_send" min="-2" max="-2" attributes="0"/>
+                  <Component id="button_MakeA_send" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="label_makea_name">
+        <Component class="javax.swing.JLabel" name="label_MakeA_name">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -422,7 +424,7 @@
             <Property name="text" type="java.lang.String" value="Full name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_makea_adressinfo">
+        <Component class="javax.swing.JLabel" name="label_MakeA_adressinfo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -430,9 +432,9 @@
             <Property name="text" type="java.lang.String" value="Adress information:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtfield_makeA_bday">
+        <Component class="javax.swing.JTextField" name="txtfield_MakeA_bday">
         </Component>
-        <Component class="javax.swing.JButton" name="button_makea_send">
+        <Component class="javax.swing.JButton" name="button_MakeA_send">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -440,11 +442,11 @@
             <Property name="text" type="java.lang.String" value="send"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_makea_sendMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_makea_sendActionPerformed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_MakeA_sendMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_MakeA_sendActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_makea_bday">
+        <Component class="javax.swing.JLabel" name="label_MakeA_bday">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -452,7 +454,7 @@
             <Property name="text" type="java.lang.String" value="Date of birth: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_makea_healthinfo">
+        <Component class="javax.swing.JLabel" name="label_MakeA_healthinfo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -460,7 +462,7 @@
             <Property name="text" type="java.lang.String" value="Health information:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_makea_type">
+        <Component class="javax.swing.JLabel" name="label_MakeA_type">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -468,9 +470,9 @@
             <Property name="text" type="java.lang.String" value="Insurance type: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtfield_makeA_insurancename">
+        <Component class="javax.swing.JTextField" name="txtfield_MakeA_insurancename">
         </Component>
-        <Component class="javax.swing.JLabel" name="label_makea_insurancename">
+        <Component class="javax.swing.JLabel" name="label_MakeA_insurancename">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -478,11 +480,11 @@
             <Property name="text" type="java.lang.String" value="Insurance name: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtfield_name">
+        <Component class="javax.swing.JTextField" name="txtfield_MakeA_name">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtfield_makeA_healthinfo">
+        <Component class="javax.swing.JTextField" name="txtfield_MakeA_healthinfo">
         </Component>
-        <Component class="javax.swing.JComboBox" name="combobox_makeA_type">
+        <Component class="javax.swing.JComboBox" name="combobox_MakeA_type">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="10" style="0"/>
@@ -499,9 +501,9 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtfield_makeA_adressinfo">
+        <Component class="javax.swing.JTextField" name="txtfield_MakeA_adressinfo">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="label_MakeA_heading1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -509,12 +511,12 @@
             <Property name="text" type="java.lang.String" value="Please fill out everything in order to make an appointment."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="label_MakeA_heading2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Please select your health problem and the distance of search "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="combo_MakeA_healthproblem">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -529,37 +531,37 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+        <Component class="javax.swing.JRadioButton" name="radiobutton_MakeA_2km">
           <Properties>
             <Property name="text" type="java.lang.String" value="2km"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radiobutton_MakeA_2kmActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+        <Component class="javax.swing.JRadioButton" name="radiobutton_MakeA_5km">
           <Properties>
             <Property name="text" type="java.lang.String" value="5km"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+        <Component class="javax.swing.JRadioButton" name="radiobutton_MakeA_10km">
           <Properties>
             <Property name="text" type="java.lang.String" value="10km"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+        <Component class="javax.swing.JRadioButton" name="radiobutton_MakeA15km">
           <Properties>
             <Property name="text" type="java.lang.String" value="15km"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+        <Container class="javax.swing.JScrollPane" name="ScrollPane_MakeA_list">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
+            <Component class="javax.swing.JList" name="list_MakeA_doctorlist">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="5">
@@ -577,12 +579,12 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="label_MakeA_reminder">
           <Properties>
             <Property name="text" type="java.lang.String" value="Remind me in: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="comboboy_MakeA_time">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">

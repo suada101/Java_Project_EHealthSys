@@ -48,30 +48,30 @@ public class Startpage extends javax.swing.JFrame {
         button_ShiftCancelAp = new javax.swing.JButton();
         button_ExportToPdf = new javax.swing.JButton();
         MakeAPane = new javax.swing.JLayeredPane();
-        label_makea_name = new javax.swing.JLabel();
-        label_makea_adressinfo = new javax.swing.JLabel();
-        txtfield_makeA_bday = new javax.swing.JTextField();
-        button_makea_send = new javax.swing.JButton();
-        label_makea_bday = new javax.swing.JLabel();
-        label_makea_healthinfo = new javax.swing.JLabel();
-        label_makea_type = new javax.swing.JLabel();
-        txtfield_makeA_insurancename = new javax.swing.JTextField();
-        label_makea_insurancename = new javax.swing.JLabel();
-        txtfield_name = new javax.swing.JTextField();
-        txtfield_makeA_healthinfo = new javax.swing.JTextField();
-        combobox_makeA_type = new javax.swing.JComboBox<>();
-        txtfield_makeA_adressinfo = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        label_MakeA_name = new javax.swing.JLabel();
+        label_MakeA_adressinfo = new javax.swing.JLabel();
+        txtfield_MakeA_bday = new javax.swing.JTextField();
+        button_MakeA_send = new javax.swing.JButton();
+        label_MakeA_bday = new javax.swing.JLabel();
+        label_MakeA_healthinfo = new javax.swing.JLabel();
+        label_MakeA_type = new javax.swing.JLabel();
+        txtfield_MakeA_insurancename = new javax.swing.JTextField();
+        label_MakeA_insurancename = new javax.swing.JLabel();
+        txtfield_MakeA_name = new javax.swing.JTextField();
+        txtfield_MakeA_healthinfo = new javax.swing.JTextField();
+        combobox_MakeA_type = new javax.swing.JComboBox<>();
+        txtfield_MakeA_adressinfo = new javax.swing.JTextField();
+        label_MakeA_heading1 = new javax.swing.JLabel();
+        label_MakeA_heading2 = new javax.swing.JLabel();
+        combo_MakeA_healthproblem = new javax.swing.JComboBox<>();
+        radiobutton_MakeA_2km = new javax.swing.JRadioButton();
+        radiobutton_MakeA_5km = new javax.swing.JRadioButton();
+        radiobutton_MakeA_10km = new javax.swing.JRadioButton();
+        radiobutton_MakeA15km = new javax.swing.JRadioButton();
+        ScrollPane_MakeA_list = new javax.swing.JScrollPane();
+        list_MakeA_doctorlist = new javax.swing.JList<>();
+        label_MakeA_reminder = new javax.swing.JLabel();
+        comboboy_MakeA_time = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -240,200 +240,200 @@ public class Startpage extends javax.swing.JFrame {
 
         button_MakeAppointment.getAccessibleContext().setAccessibleDescription("");
 
-        label_makea_name.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        label_makea_name.setText("Full name:");
+        label_MakeA_name.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        label_MakeA_name.setText("Full name:");
 
-        label_makea_adressinfo.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        label_makea_adressinfo.setText("Adress information:");
+        label_MakeA_adressinfo.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        label_MakeA_adressinfo.setText("Adress information:");
 
-        button_makea_send.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        button_makea_send.setText("send");
-        button_makea_send.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_MakeA_send.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        button_MakeA_send.setText("send");
+        button_MakeA_send.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                button_makea_sendMouseReleased(evt);
+                button_MakeA_sendMouseReleased(evt);
             }
         });
-        button_makea_send.addActionListener(new java.awt.event.ActionListener() {
+        button_MakeA_send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_makea_sendActionPerformed(evt);
+                button_MakeA_sendActionPerformed(evt);
             }
         });
 
-        label_makea_bday.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        label_makea_bday.setText("Date of birth: ");
+        label_MakeA_bday.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        label_MakeA_bday.setText("Date of birth: ");
 
-        label_makea_healthinfo.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        label_makea_healthinfo.setText("Health information:");
+        label_MakeA_healthinfo.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        label_MakeA_healthinfo.setText("Health information:");
 
-        label_makea_type.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        label_makea_type.setText("Insurance type: ");
+        label_MakeA_type.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        label_MakeA_type.setText("Insurance type: ");
 
-        label_makea_insurancename.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        label_makea_insurancename.setText("Insurance name: ");
+        label_MakeA_insurancename.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        label_MakeA_insurancename.setText("Insurance name: ");
 
-        combobox_makeA_type.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        combobox_makeA_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "private", "public" }));
-        combobox_makeA_type.setToolTipText("");
+        combobox_MakeA_type.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        combobox_MakeA_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "private", "public" }));
+        combobox_MakeA_type.setToolTipText("");
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel8.setText("Please fill out everything in order to make an appointment.");
+        label_MakeA_heading1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        label_MakeA_heading1.setText("Please fill out everything in order to make an appointment.");
 
-        jLabel1.setText("Please select your health problem and the distance of search ");
+        label_MakeA_heading2.setText("Please select your health problem and the distance of search ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "heart", "lungs", "stomach", "general " }));
+        combo_MakeA_healthproblem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "heart", "lungs", "stomach", "general " }));
 
-        jRadioButton1.setText("2km");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        radiobutton_MakeA_2km.setText("2km");
+        radiobutton_MakeA_2km.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                radiobutton_MakeA_2kmActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("5km");
+        radiobutton_MakeA_5km.setText("5km");
 
-        jRadioButton3.setText("10km");
+        radiobutton_MakeA_10km.setText("10km");
 
-        jRadioButton4.setText("15km");
+        radiobutton_MakeA15km.setText("15km");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        list_MakeA_doctorlist.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        ScrollPane_MakeA_list.setViewportView(list_MakeA_doctorlist);
 
-        jLabel2.setText("Remind me in: ");
+        label_MakeA_reminder.setText("Remind me in: ");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 minutes", "1 hour", "3 days", "1 week" }));
+        comboboy_MakeA_time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 minutes", "1 hour", "3 days", "1 week" }));
 
-        MakeAPane.setLayer(label_makea_name, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(label_makea_adressinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(txtfield_makeA_bday, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(button_makea_send, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(label_makea_bday, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(label_makea_healthinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(label_makea_type, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(txtfield_makeA_insurancename, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(label_makea_insurancename, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(txtfield_name, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(txtfield_makeA_healthinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(combobox_makeA_type, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(txtfield_makeA_adressinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jComboBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jRadioButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jRadioButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jRadioButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jRadioButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_name, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_adressinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(txtfield_MakeA_bday, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(button_MakeA_send, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_bday, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_healthinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_type, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(txtfield_MakeA_insurancename, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_insurancename, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(txtfield_MakeA_name, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(txtfield_MakeA_healthinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(combobox_MakeA_type, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(txtfield_MakeA_adressinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_heading1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_heading2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(combo_MakeA_healthproblem, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(radiobutton_MakeA_2km, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(radiobutton_MakeA_5km, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(radiobutton_MakeA_10km, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(radiobutton_MakeA15km, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(ScrollPane_MakeA_list, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(label_MakeA_reminder, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(comboboy_MakeA_time, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout MakeAPaneLayout = new javax.swing.GroupLayout(MakeAPane);
         MakeAPane.setLayout(MakeAPaneLayout);
         MakeAPaneLayout.setHorizontalGroup(
             MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(button_MakeA_send, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_makea_name, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(label_makea_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(label_makea_healthinfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                        .addComponent(label_makea_bday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(label_makea_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_makea_adressinfo))
-                .addGap(95, 95, 95)
-                .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtfield_makeA_adressinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtfield_name, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtfield_makeA_bday, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtfield_makeA_healthinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combobox_makeA_type, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtfield_makeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(110, 110, 110))
-            .addGroup(MakeAPaneLayout.createSequentialGroup()
-                .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MakeAPaneLayout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MakeAPaneLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MakeAPaneLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(jRadioButton1)
-                        .addGap(43, 43, 43)
-                        .addComponent(jRadioButton2)
-                        .addGap(44, 44, 44)
-                        .addComponent(jRadioButton3)
-                        .addGap(41, 41, 41)
-                        .addComponent(jRadioButton4))
-                    .addGroup(MakeAPaneLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel2)
+                    .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MakeAPaneLayout.createSequentialGroup()
+                            .addGap(36, 36, 36)
+                            .addComponent(combo_MakeA_healthproblem, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(62, 62, 62)
+                            .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                                .addGroup(MakeAPaneLayout.createSequentialGroup()
+                                    .addComponent(radiobutton_MakeA_2km)
+                                    .addGap(43, 43, 43)
+                                    .addComponent(radiobutton_MakeA_5km)
+                                    .addGap(44, 44, 44)
+                                    .addComponent(radiobutton_MakeA_10km)
+                                    .addGap(41, 41, 41)
+                                    .addComponent(radiobutton_MakeA15km))))
+                        .addGroup(MakeAPaneLayout.createSequentialGroup()
+                            .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(MakeAPaneLayout.createSequentialGroup()
+                                    .addGap(174, 174, 174)
+                                    .addComponent(label_MakeA_heading2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MakeAPaneLayout.createSequentialGroup()
+                                    .addGap(147, 147, 147)
+                                    .addComponent(label_MakeA_heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MakeAPaneLayout.createSequentialGroup()
+                                    .addComponent(label_MakeA_reminder)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(comboboy_MakeA_time, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
                         .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MakeAPaneLayout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(MakeAPaneLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(button_makea_send, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                            .addComponent(label_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(label_MakeA_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_MakeA_healthinfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                .addComponent(label_MakeA_bday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_MakeA_adressinfo))
+                        .addGap(95, 95, 95)
+                        .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtfield_MakeA_adressinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtfield_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtfield_MakeA_bday, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtfield_MakeA_healthinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(combobox_MakeA_type, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtfield_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(110, 110, 110))
         );
         MakeAPaneLayout.setVerticalGroup(
             MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MakeAPaneLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel8)
+                .addComponent(label_MakeA_heading1)
                 .addGap(31, 31, 31)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_makea_name, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtfield_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtfield_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_makea_adressinfo)
-                    .addComponent(txtfield_makeA_adressinfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_adressinfo)
+                    .addComponent(txtfield_MakeA_adressinfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_makea_bday)
-                    .addComponent(txtfield_makeA_bday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_bday)
+                    .addComponent(txtfield_MakeA_bday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_makea_healthinfo)
-                    .addComponent(txtfield_makeA_healthinfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_healthinfo)
+                    .addComponent(txtfield_MakeA_healthinfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_makea_type)
-                    .addComponent(combobox_makeA_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_type)
+                    .addComponent(combobox_MakeA_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_makea_insurancename)
-                    .addComponent(txtfield_makeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_insurancename)
+                    .addComponent(txtfield_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
-                .addComponent(jLabel1)
+                .addComponent(label_MakeA_heading2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(combo_MakeA_healthproblem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radiobutton_MakeA_2km)
+                    .addComponent(radiobutton_MakeA_5km)
+                    .addComponent(radiobutton_MakeA_10km)
+                    .addComponent(radiobutton_MakeA15km))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_MakeA_reminder)
+                    .addComponent(comboboy_MakeA_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(button_makea_send)
+                .addComponent(button_MakeA_send)
                 .addGap(19, 19, 19))
         );
 
@@ -468,10 +468,10 @@ public class Startpage extends javax.swing.JFrame {
        SelectionPane.setVisible(false);
     }//GEN-LAST:event_button_MakeAppointmentMousePressed
 
-    private void button_makea_sendMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_makea_sendMouseReleased
+    private void button_MakeA_sendMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_MakeA_sendMouseReleased
        int i;
        // txtfield_name.getText().isEmpty()
-       if( (!txtfield_name.getText().isEmpty()) && (!txtfield_makeA_adressinfo.getText().isEmpty()) && (!txtfield_makeA_bday.getText().isEmpty()) && (!txtfield_makeA_healthinfo.getText().isEmpty()) && (!txtfield_makeA_insurancename.getText().isEmpty()) ) {
+       if( (!txtfield_MakeA_name.getText().isEmpty()) && (!txtfield_MakeA_adressinfo.getText().isEmpty()) && (!txtfield_MakeA_bday.getText().isEmpty()) && (!txtfield_MakeA_healthinfo.getText().isEmpty()) && (!txtfield_MakeA_insurancename.getText().isEmpty()) ) {
            //Datenspeichern in Datenbank 
            
            
@@ -491,16 +491,16 @@ public class Startpage extends javax.swing.JFrame {
     
         /*JOptionPane.showMessageDialog(null,"Appointment is send.");*/
 	
-    }//GEN-LAST:event_button_makea_sendMouseReleased
+    }//GEN-LAST:event_button_MakeA_sendMouseReleased
 
-    private void button_makea_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_makea_sendActionPerformed
+    private void button_MakeA_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MakeA_sendActionPerformed
        //Save data to database
        
        // So bekommt man allgemein die eingabe
 
        //test.setText(txtfield_name.getText());
        
-    }//GEN-LAST:event_button_makea_sendActionPerformed
+    }//GEN-LAST:event_button_MakeA_sendActionPerformed
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
         button_test.setVisible(false);
@@ -514,9 +514,9 @@ public class Startpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void radiobutton_MakeA_2kmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobutton_MakeA_2kmActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_radiobutton_MakeA_2kmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -556,42 +556,42 @@ public class Startpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane LogInPane;
     private javax.swing.JLayeredPane MakeAPane;
+    private javax.swing.JScrollPane ScrollPane_MakeA_list;
     private javax.swing.JLayeredPane SelectionPane;
     private javax.swing.JButton button_ExportToPdf;
+    private javax.swing.JButton button_MakeA_send;
     private javax.swing.JButton button_MakeAppointment;
     private javax.swing.JButton button_ShiftCancelAp;
-    private javax.swing.JButton button_makea_send;
     private javax.swing.JButton button_test;
-    private javax.swing.JComboBox<String> combobox_makeA_type;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> combo_MakeA_healthproblem;
+    private javax.swing.JComboBox<String> combobox_MakeA_type;
+    private javax.swing.JComboBox<String> comboboy_MakeA_time;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel label_makea_adressinfo;
-    private javax.swing.JLabel label_makea_bday;
-    private javax.swing.JLabel label_makea_healthinfo;
-    private javax.swing.JLabel label_makea_insurancename;
-    private javax.swing.JLabel label_makea_name;
-    private javax.swing.JLabel label_makea_type;
+    private javax.swing.JLabel label_MakeA_adressinfo;
+    private javax.swing.JLabel label_MakeA_bday;
+    private javax.swing.JLabel label_MakeA_heading1;
+    private javax.swing.JLabel label_MakeA_heading2;
+    private javax.swing.JLabel label_MakeA_healthinfo;
+    private javax.swing.JLabel label_MakeA_insurancename;
+    private javax.swing.JLabel label_MakeA_name;
+    private javax.swing.JLabel label_MakeA_reminder;
+    private javax.swing.JLabel label_MakeA_type;
     private javax.swing.JLabel label_test;
+    private javax.swing.JList<String> list_MakeA_doctorlist;
     private javax.swing.JLabel loginpic;
+    private javax.swing.JRadioButton radiobutton_MakeA15km;
+    private javax.swing.JRadioButton radiobutton_MakeA_10km;
+    private javax.swing.JRadioButton radiobutton_MakeA_2km;
+    private javax.swing.JRadioButton radiobutton_MakeA_5km;
     private javax.swing.JLayeredPane startseite;
-    private javax.swing.JTextField txtfield_makeA_adressinfo;
-    private javax.swing.JTextField txtfield_makeA_bday;
-    private javax.swing.JTextField txtfield_makeA_healthinfo;
-    private javax.swing.JTextField txtfield_makeA_insurancename;
-    private javax.swing.JTextField txtfield_name;
+    private javax.swing.JTextField txtfield_MakeA_adressinfo;
+    private javax.swing.JTextField txtfield_MakeA_bday;
+    private javax.swing.JTextField txtfield_MakeA_healthinfo;
+    private javax.swing.JTextField txtfield_MakeA_insurancename;
+    private javax.swing.JTextField txtfield_MakeA_name;
     // End of variables declaration//GEN-END:variables
 }
