@@ -16,6 +16,8 @@ import otherclasses.Doctor;
  */
 public class Startpage extends javax.swing.JFrame {
 
+    
+
     /**
      * Creates new form Startpage
      */
@@ -40,9 +42,9 @@ public class Startpage extends javax.swing.JFrame {
         button_test = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtfield_LogIn_email = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        pwfield_LogIn_password = new javax.swing.JPasswordField();
         loginpic = new javax.swing.JLabel();
         SelectionPane = new javax.swing.JLayeredPane();
         button_MakeAppointment = new javax.swing.JButton();
@@ -65,14 +67,11 @@ public class Startpage extends javax.swing.JFrame {
         label_MakeA_heading1 = new javax.swing.JLabel();
         label_MakeA_heading2 = new javax.swing.JLabel();
         combo_MakeA_healthproblem = new javax.swing.JComboBox<>();
-        radiobutton_MakeA_2km = new javax.swing.JRadioButton();
-        radiobutton_MakeA_5km = new javax.swing.JRadioButton();
-        radiobutton_MakeA_10km = new javax.swing.JRadioButton();
-        radiobutton_MakeA15km = new javax.swing.JRadioButton();
         ScrollPane_MakeA_list = new javax.swing.JScrollPane();
         list_MakeA_doctorlist = new javax.swing.JList<>();
         label_MakeA_reminder = new javax.swing.JLabel();
         comboboy_MakeA_time = new javax.swing.JComboBox<>();
+        combobox_MakeA_distance = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -103,9 +102,9 @@ public class Startpage extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel11.setText("Password");
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        pwfield_LogIn_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                pwfield_LogIn_passwordActionPerformed(evt);
             }
         });
 
@@ -113,9 +112,9 @@ public class Startpage extends javax.swing.JFrame {
         startseite.setLayer(button_test, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        startseite.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        startseite.setLayer(txtfield_LogIn_email, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        startseite.setLayer(jPasswordField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        startseite.setLayer(pwfield_LogIn_password, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(loginpic, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout startseiteLayout = new javax.swing.GroupLayout(startseite);
@@ -139,8 +138,8 @@ public class Startpage extends javax.swing.JFrame {
                         .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
                                 .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtfield_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(104, 104, 104))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,11 +161,11 @@ public class Startpage extends javax.swing.JFrame {
                 .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(startseiteLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtfield_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel11)
                         .addGap(40, 40, 40))
@@ -203,6 +202,11 @@ public class Startpage extends javax.swing.JFrame {
         });
 
         button_ShiftCancelAp.setText("Shift/Cancel Appointment");
+        button_ShiftCancelAp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_ShiftCancelApActionPerformed(evt);
+            }
+        });
 
         button_ExportToPdf.setText("Export to PDF");
         button_ExportToPdf.addActionListener(new java.awt.event.ActionListener() {
@@ -230,7 +234,7 @@ public class Startpage extends javax.swing.JFrame {
         SelectionPaneLayout.setVerticalGroup(
             SelectionPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SelectionPaneLayout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
+                .addContainerGap(146, Short.MAX_VALUE)
                 .addComponent(button_MakeAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(button_ShiftCancelAp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,7 +283,7 @@ public class Startpage extends javax.swing.JFrame {
         label_MakeA_heading1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         label_MakeA_heading1.setText("Please fill out everything in order to make an appointment.");
 
-        label_MakeA_heading2.setText("Please select your health problem and the distance of search ");
+        label_MakeA_heading2.setText("Please select the distance of search and your health problem ");
 
         combo_MakeA_healthproblem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<select please>", "general problems", "heart", "lungs", "stomach" }));
         combo_MakeA_healthproblem.addActionListener(new java.awt.event.ActionListener() {
@@ -288,24 +292,18 @@ public class Startpage extends javax.swing.JFrame {
             }
         });
 
-        radiobutton_MakeA_2km.setText("2km");
-        radiobutton_MakeA_2km.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radiobutton_MakeA_2kmActionPerformed(evt);
-            }
-        });
-
-        radiobutton_MakeA_5km.setText("5km");
-
-        radiobutton_MakeA_10km.setText("10km");
-
-        radiobutton_MakeA15km.setText("15km");
-
         ScrollPane_MakeA_list.setViewportView(list_MakeA_doctorlist);
 
         label_MakeA_reminder.setText("Remind me in: ");
 
         comboboy_MakeA_time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 minutes", "1 hour", "3 days", "1 week" }));
+
+        combobox_MakeA_distance.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "no restriction", "2km", "5km", "10km", "15km" }));
+        combobox_MakeA_distance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combobox_MakeA_distanceActionPerformed(evt);
+            }
+        });
 
         MakeAPane.setLayer(label_MakeA_name, javax.swing.JLayeredPane.DEFAULT_LAYER);
         MakeAPane.setLayer(label_MakeA_adressinfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -323,70 +321,49 @@ public class Startpage extends javax.swing.JFrame {
         MakeAPane.setLayer(label_MakeA_heading1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         MakeAPane.setLayer(label_MakeA_heading2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         MakeAPane.setLayer(combo_MakeA_healthproblem, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(radiobutton_MakeA_2km, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(radiobutton_MakeA_5km, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(radiobutton_MakeA_10km, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        MakeAPane.setLayer(radiobutton_MakeA15km, javax.swing.JLayeredPane.DEFAULT_LAYER);
         MakeAPane.setLayer(ScrollPane_MakeA_list, javax.swing.JLayeredPane.DEFAULT_LAYER);
         MakeAPane.setLayer(label_MakeA_reminder, javax.swing.JLayeredPane.DEFAULT_LAYER);
         MakeAPane.setLayer(comboboy_MakeA_time, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        MakeAPane.setLayer(combobox_MakeA_distance, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout MakeAPaneLayout = new javax.swing.GroupLayout(MakeAPane);
         MakeAPane.setLayout(MakeAPaneLayout);
         MakeAPaneLayout.setHorizontalGroup(
             MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(button_MakeA_send, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(MakeAPaneLayout.createSequentialGroup()
-                            .addGap(36, 36, 36)
-                            .addComponent(combo_MakeA_healthproblem, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(62, 62, 62)
-                            .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
-                                .addGroup(MakeAPaneLayout.createSequentialGroup()
-                                    .addComponent(radiobutton_MakeA_2km)
-                                    .addGap(43, 43, 43)
-                                    .addComponent(radiobutton_MakeA_5km)
-                                    .addGap(44, 44, 44)
-                                    .addComponent(radiobutton_MakeA_10km)
-                                    .addGap(41, 41, 41)
-                                    .addComponent(radiobutton_MakeA15km))))
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(button_MakeA_send, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(label_MakeA_heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MakeAPaneLayout.createSequentialGroup()
+                            .addComponent(label_MakeA_reminder)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(comboboy_MakeA_time, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(MakeAPaneLayout.createSequentialGroup()
                             .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(MakeAPaneLayout.createSequentialGroup()
-                                    .addGap(174, 174, 174)
-                                    .addComponent(label_MakeA_heading2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(MakeAPaneLayout.createSequentialGroup()
-                                    .addGap(147, 147, 147)
-                                    .addComponent(label_MakeA_heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(MakeAPaneLayout.createSequentialGroup()
-                                    .addComponent(label_MakeA_reminder)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(comboboy_MakeA_time, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeAPaneLayout.createSequentialGroup()
-                        .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(label_MakeA_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(label_MakeA_healthinfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                                .addComponent(label_MakeA_bday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(label_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label_MakeA_adressinfo))
-                        .addGap(95, 95, 95)
-                        .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtfield_MakeA_adressinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfield_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfield_MakeA_bday, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfield_MakeA_healthinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(combobox_MakeA_type, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfield_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(label_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(label_MakeA_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(label_MakeA_healthinfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                    .addComponent(label_MakeA_bday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_MakeA_adressinfo))
+                            .addGap(95, 95, 95)
+                            .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtfield_MakeA_adressinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfield_MakeA_name, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfield_MakeA_bday, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfield_MakeA_healthinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(combobox_MakeA_type, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfield_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_MakeA_heading2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(MakeAPaneLayout.createSequentialGroup()
+                                .addComponent(combobox_MakeA_distance, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(combo_MakeA_healthproblem, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(110, 110, 110))
         );
         MakeAPaneLayout.setVerticalGroup(
@@ -418,24 +395,21 @@ public class Startpage extends javax.swing.JFrame {
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_MakeA_insurancename)
                     .addComponent(txtfield_MakeA_insurancename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addComponent(label_MakeA_heading2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combo_MakeA_healthproblem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(radiobutton_MakeA_2km)
-                    .addComponent(radiobutton_MakeA_5km)
-                    .addComponent(radiobutton_MakeA_10km)
-                    .addComponent(radiobutton_MakeA15km))
-                .addGap(18, 18, 18)
+                    .addComponent(combobox_MakeA_distance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(22, 22, 22)
                 .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_MakeA_reminder)
                     .addComponent(comboboy_MakeA_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(26, 26, 26)
                 .addComponent(button_MakeA_send)
-                .addGap(19, 19, 19))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -461,7 +435,7 @@ public class Startpage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_ExportToPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ExportToPdfActionPerformed
-        // TODO add your handling code here:
+        // SARDARS CODE
     }//GEN-LAST:event_button_ExportToPdfActionPerformed
 
     private void button_MakeAppointmentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_MakeAppointmentMousePressed
@@ -504,26 +478,37 @@ public class Startpage extends javax.swing.JFrame {
     }//GEN-LAST:event_button_MakeA_sendActionPerformed
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
-        button_test.setVisible(false);
-        label_test.setVisible(false);
-        SelectionPane.setVisible(true);
-        startseite.setVisible(false);
-        LogInPane.setVisible(false);
+        //MAHI CODE
+        String password = String.valueOf(pwfield_LogIn_password.getPassword()); // Casting von char[] zu String
+        //statt "suada" und "abc" variablen zur Datenbank hinzufügen
+        if( !"suada".equals(txtfield_LogIn_email.getText()) || !"abc".equals(password)){
+            JOptionPane.showMessageDialog(null,"Email or password is false");
+        } else {
+            
+            
+            //Das alles soll passieren, wenn man erfolgreich eingelogt ist
+            button_test.setVisible(false);
+            label_test.setVisible(false);
+            SelectionPane.setVisible(true);
+            startseite.setVisible(false);
+            LogInPane.setVisible(false);
+        }
     }//GEN-LAST:event_button_testActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void pwfield_LogIn_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwfield_LogIn_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
-    private void radiobutton_MakeA_2kmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobutton_MakeA_2kmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radiobutton_MakeA_2kmActionPerformed
+    }//GEN-LAST:event_pwfield_LogIn_passwordActionPerformed
 
     private void combo_MakeA_healthproblemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_MakeA_healthproblemActionPerformed
+        
+      
+    if(combobox_MakeA_distance.getSelectedItem() == "no restriction"){
+        
         if(combo_MakeA_healthproblem.getSelectedItem() == "heart" ){
+            
            DefaultListModel<String> dlm1 = new DefaultListModel<>();
-           dlm1.addElement(Doctor.heart1.name);
-           dlm1.addElement( Doctor.heart2.name);
+            dlm1.addElement(Doctor.heart1.name);
+            dlm1.addElement( Doctor.heart2.name);
             list_MakeA_doctorlist.setModel(dlm1);
             
         }
@@ -531,7 +516,7 @@ public class Startpage extends javax.swing.JFrame {
         if(combo_MakeA_healthproblem.getSelectedItem() == "lungs" ){
             DefaultListModel<String> dlm1 = new DefaultListModel<>();
            dlm1.addElement(Doctor.lungs1.name);
-           dlm1.addElement( Doctor.lung2.name);
+           dlm1.addElement( Doctor.lungs2.name);
             list_MakeA_doctorlist.setModel(dlm1);
             
         }
@@ -553,7 +538,161 @@ public class Startpage extends javax.swing.JFrame {
             list_MakeA_doctorlist.setModel(dlm1);
             
         }
+        
+    }
+    
+    if(combobox_MakeA_distance.getSelectedItem() == "2km"){
+        
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "heart" ){
+            
+           DefaultListModel<String> dlm1 = new DefaultListModel<>();
+            dlm1.addElement(Doctor.heart1.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "lungs" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.lungs1.name);
+            list_MakeA_doctorlist.setModel(dlm1);      
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "stomach" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.stomach1.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "general problems" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.general1.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        
+        
+    }
+    
+    if(combobox_MakeA_distance.getSelectedItem() == "5km"){
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "heart" ){
+            
+           DefaultListModel<String> dlm1 = new DefaultListModel<>();
+            dlm1.addElement(Doctor.heart1.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "lungs" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.lungs1.name);
+            list_MakeA_doctorlist.setModel(dlm1);      
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "stomach" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.stomach1.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "general problems" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.general1.name);
+           dlm1.addElement(Doctor.general2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        
+        
+    }
+    
+    if(combobox_MakeA_distance.getSelectedItem() == "10km"){
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "heart" ){
+            
+           DefaultListModel<String> dlm1 = new DefaultListModel<>();
+            dlm1.addElement(Doctor.heart1.name);
+            dlm1.addElement(Doctor.heart2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "lungs" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.lungs1.name);
+           dlm1.addElement(Doctor.lungs2.name);
+            list_MakeA_doctorlist.setModel(dlm1);      
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "stomach" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.stomach1.name);
+           dlm1.addElement(Doctor.stomach2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "general problems" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.general1.name);
+           dlm1.addElement(Doctor.general2.name);
+           dlm1.addElement(Doctor.general3.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        
+        
+    }
+    
+    if(combobox_MakeA_distance.getSelectedItem() == "15km"){
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "heart" ){
+            
+           DefaultListModel<String> dlm1 = new DefaultListModel<>();
+            dlm1.addElement(Doctor.heart1.name);
+            dlm1.addElement(Doctor.heart2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "lungs" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.lungs1.name);
+           dlm1.addElement(Doctor.lungs2.name);
+            list_MakeA_doctorlist.setModel(dlm1);      
+        }
+        if(combo_MakeA_healthproblem.getSelectedItem() == "stomach" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.stomach1.name);
+           dlm1.addElement(Doctor.stomach2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "general problems" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.general1.name);
+           dlm1.addElement(Doctor.general2.name);
+           dlm1.addElement(Doctor.general3.name);
+           dlm1.addElement(Doctor.general4.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        
+        
+    }
+     
+            
+    //ende
     }//GEN-LAST:event_combo_MakeA_healthproblemActionPerformed
+
+    private void button_ShiftCancelApActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ShiftCancelApActionPerformed
+        //Noras CODE
+    }//GEN-LAST:event_button_ShiftCancelApActionPerformed
+
+    private void combobox_MakeA_distanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combobox_MakeA_distanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combobox_MakeA_distanceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -601,13 +740,12 @@ public class Startpage extends javax.swing.JFrame {
     private javax.swing.JButton button_ShiftCancelAp;
     private javax.swing.JButton button_test;
     private javax.swing.JComboBox<String> combo_MakeA_healthproblem;
+    private javax.swing.JComboBox<String> combobox_MakeA_distance;
     private javax.swing.JComboBox<String> combobox_MakeA_type;
     private javax.swing.JComboBox<String> comboboy_MakeA_time;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label_MakeA_adressinfo;
     private javax.swing.JLabel label_MakeA_bday;
     private javax.swing.JLabel label_MakeA_heading1;
@@ -620,15 +758,18 @@ public class Startpage extends javax.swing.JFrame {
     private javax.swing.JLabel label_test;
     private javax.swing.JList<String> list_MakeA_doctorlist;
     private javax.swing.JLabel loginpic;
-    private javax.swing.JRadioButton radiobutton_MakeA15km;
-    private javax.swing.JRadioButton radiobutton_MakeA_10km;
-    private javax.swing.JRadioButton radiobutton_MakeA_2km;
-    private javax.swing.JRadioButton radiobutton_MakeA_5km;
+    private javax.swing.JPasswordField pwfield_LogIn_password;
     private javax.swing.JLayeredPane startseite;
+    private javax.swing.JTextField txtfield_LogIn_email;
     private javax.swing.JTextField txtfield_MakeA_adressinfo;
     private javax.swing.JTextField txtfield_MakeA_bday;
     private javax.swing.JTextField txtfield_MakeA_healthinfo;
     private javax.swing.JTextField txtfield_MakeA_insurancename;
     private javax.swing.JTextField txtfield_MakeA_name;
     // End of variables declaration//GEN-END:variables
+    int distance;
+    int distance1;
+    int distance2;
+    int distance3;
+    int distance4;
 }
