@@ -1,4 +1,5 @@
 
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import otherclasses.Doctor;
@@ -280,7 +281,12 @@ public class Startpage extends javax.swing.JFrame {
 
         label_MakeA_heading2.setText("Please select your health problem and the distance of search ");
 
-        combo_MakeA_healthproblem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "heart", "lungs", "stomach", "general " }));
+        combo_MakeA_healthproblem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<select please>", "general problems", "heart", "lungs", "stomach" }));
+        combo_MakeA_healthproblem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_MakeA_healthproblemActionPerformed(evt);
+            }
+        });
 
         radiobutton_MakeA_2km.setText("2km");
         radiobutton_MakeA_2km.addActionListener(new java.awt.event.ActionListener() {
@@ -295,11 +301,6 @@ public class Startpage extends javax.swing.JFrame {
 
         radiobutton_MakeA15km.setText("15km");
 
-        list_MakeA_doctorlist.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         ScrollPane_MakeA_list.setViewportView(list_MakeA_doctorlist);
 
         label_MakeA_reminder.setText("Remind me in: ");
@@ -347,7 +348,7 @@ public class Startpage extends javax.swing.JFrame {
                             .addComponent(combo_MakeA_healthproblem, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(62, 62, 62)
                             .addGroup(MakeAPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                                .addComponent(ScrollPane_MakeA_list, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                 .addGroup(MakeAPaneLayout.createSequentialGroup()
                                     .addComponent(radiobutton_MakeA_2km)
                                     .addGap(43, 43, 43)
@@ -517,6 +518,42 @@ public class Startpage extends javax.swing.JFrame {
     private void radiobutton_MakeA_2kmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobutton_MakeA_2kmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radiobutton_MakeA_2kmActionPerformed
+
+    private void combo_MakeA_healthproblemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_MakeA_healthproblemActionPerformed
+        if(combo_MakeA_healthproblem.getSelectedItem() == "heart" ){
+           DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.heart1.name);
+           dlm1.addElement( Doctor.heart2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "lungs" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.lungs1.name);
+           dlm1.addElement( Doctor.lung2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "stomach" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.stomach1.name);
+           dlm1.addElement( Doctor.stomach2.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+        
+        if(combo_MakeA_healthproblem.getSelectedItem() == "general problems" ){
+            DefaultListModel<String> dlm1 = new DefaultListModel<>();
+           dlm1.addElement(Doctor.general1.name);
+           dlm1.addElement( Doctor.general2.name);
+           dlm1.addElement( Doctor.general3.name);
+           dlm1.addElement( Doctor.general4.name);
+            list_MakeA_doctorlist.setModel(dlm1);
+            
+        }
+    }//GEN-LAST:event_combo_MakeA_healthproblemActionPerformed
 
     /**
      * @param args the command line arguments
