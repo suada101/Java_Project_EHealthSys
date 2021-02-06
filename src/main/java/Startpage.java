@@ -1,8 +1,42 @@
 
+import deleteChangeFunction.windowCancel;
+import deleteChangeFunction.windowChange;
+import deleteChangeFunction.windowR;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import otherclasses.Doctor;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+import java.awt.BorderLayout;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import java.util.ArrayList;
+import javax.swing.JPasswordField;
+import javax.swing.JCheckBox;
+import javax.swing.JTextPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -479,7 +513,7 @@ public class Startpage extends javax.swing.JFrame {
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
         //MAHI CODE
-        String password = String.valueOf(pwfield_LogIn_password.getPassword()); // Casting von char[] zu String
+        /* String password = String.valueOf(pwfield_LogIn_password.getPassword()); // Casting von char[] zu String
         //statt "suada" und "abc" variablen zur Datenbank hinzufügen
         if( !"suada".equals(txtfield_LogIn_email.getText()) || !"abc".equals(password)){
             JOptionPane.showMessageDialog(null,"Email or password is false");
@@ -492,7 +526,122 @@ public class Startpage extends javax.swing.JFrame {
             SelectionPane.setVisible(true);
             startseite.setVisible(false);
             LogInPane.setVisible(false);
-        }
+        }*/
+            
+            button_test.setVisible(false);
+            label_test.setVisible(false);
+            SelectionPane.setVisible(true);
+            startseite.setVisible(false);
+            LogInPane.setVisible(false);
+        
+            
+        /// MAHIS PART START
+        EventQueue.invokeLater(() -> {
+            try {
+                LogIn_extends_JFrame frame = new LogIn_extends_JFrame();
+                frame.setVisible(true);
+            } catch (Exception e) {
+            }
+        });    
+        
+         LogIn_extends_JFrame();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600, 300);
+        JPanel contentPane = new JPanel();
+		contentPane.setBorder(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setFont(new Font("Barlow", Font.PLAIN, 14));
+		lblUsername.setBounds(172, 82, 88, 13);
+		contentPane.add(lblUsername);
+		
+		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("Barlow", Font.PLAIN, 14));
+		lblPassword.setBounds(172, 123, 88, 13);
+		contentPane.add(lblPassword);
+		
+        JTextField usernameTextField = new JTextField();
+		usernameTextField.setBounds(247, 81, 140, 19);
+		contentPane.add(usernameTextField);
+		usernameTextField.setColumns(10);
+		
+        JPasswordField passwordTextField = new JPasswordField();
+	passwordTextField.setBounds(247, 122, 140, 19);
+		contentPane.add(passwordTextField);
+		
+		
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setForeground(new Color(255, 255, 255));
+		btnLogin.setBackground(new Color(30, 144, 255));
+		btnLogin.setFont(new Font("Barlow SemiBold", Font.PLAIN, 15));
+		btnLogin.addActionListener((ActionEvent e) -> {
+                    String un = usernameTextField.getText();
+                    String pw = passwordTextField.getText();
+                    
+                    if(pw.isEmpty() && un.isEmpty() == false){
+                        JOptionPane.showMessageDialog(null, "Please Type in a Password!", "Attention", JOptionPane.CANCEL_OPTION);
+                    }
+                    else if(un.isEmpty() && pw.isEmpty() == false){
+                        JOptionPane.showMessageDialog(null, "Please type in a Username!", "Attention", JOptionPane.CANCEL_OPTION);
+                    }
+                    else if(un.isEmpty() && pw.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Please type in a Username and a Password!", "Attention", JOptionPane.CANCEL_OPTION);
+                    }
+                    else {
+                        
+                        
+                        
+                        
+                        
+                        try {
+                            Statement stmt = null;
+                           // stmt = /null/query.createStatement();
+                            String sql = "SELECT username, password FROM login where username = '"+ un+"' and binary password = '"+ pw +"'";
+                            ResultSet rs = stmt.executeQuery(sql);
+                            if(rs.next()){
+                                JOptionPane.showMessageDialog(null,"Hello, welcome back.","Welcome!", JOptionPane.DEFAULT_OPTION);
+                                // If username and password are correct, then next procedure will be forwarding to next Frame for example Menu
+                            }
+                        } catch (SQLException ex) {
+                            JOptionPane.showMessageDialog(null,"Your credentials are incorrect!\nPlease try again.","Error!", JOptionPane.DEFAULT_OPTION);
+                        }
+                        
+                        
+                    }
+                });
+        
+                
+                btnLogin.setBounds(247, 156, 94, 27);
+		contentPane.add(btnLogin);
+		
+		JCheckBox chckbxShowpPassword = new JCheckBox("Show Password");
+		chckbxShowpPassword.setFont(new Font("Barlow", Font.PLAIN, 11));
+		chckbxShowpPassword.addActionListener((ActionEvent e) -> {
+                    if(chckbxShowpPassword.isSelected()) {
+                        passwordTextField.setEchoChar((char)0);
+                    }
+                    else {
+                        passwordTextField.setEchoChar('*');
+                    }
+        });
+                
+                chckbxShowpPassword.setBounds(396, 119, 140, 21);
+		contentPane.add(chckbxShowpPassword);
+		
+		JLabel lblApplicationName = new JLabel("Application Name");
+		lblApplicationName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblApplicationName.setFont(new Font("Barlow SemiBold", Font.PLAIN, 15));
+		lblApplicationName.setBounds(10, 29, 586, 13);
+		contentPane.add(lblApplicationName);
+		
+		
+	
+                
+            
+        
     }//GEN-LAST:event_button_testActionPerformed
 
     private void pwfield_LogIn_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwfield_LogIn_passwordActionPerformed
@@ -688,6 +837,94 @@ public class Startpage extends javax.swing.JFrame {
 
     private void button_ShiftCancelApActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ShiftCancelApActionPerformed
         //Noras CODE
+         
+        
+EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					windowR window = new windowR();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+class windowR {
+
+	JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+        
+	 void main() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					windowR window = new windowR();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public windowR() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("Cancel");
+		btnNewButton.setBounds(73, 174, 85, 21);
+		frame.getContentPane().add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("cancel");
+				windowCancel cancel = new windowCancel();
+				cancel.cancelMain();
+				frame.setVisible(false);
+			}
+			
+			
+		});
+		
+		JButton btnNewButton_1 = new JButton("Change");
+		btnNewButton_1.setBounds(282, 174, 85, 21);
+		frame.getContentPane().add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Change");
+				windowChange change = new windowChange();
+				change.changeMain();
+				frame.setVisible(false);
+			}
+			
+			
+		});
+		
+		
+		JLabel lblNewLabel = new JLabel("How can we help you?");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setBounds(47, 32, 351, 92);
+		frame.getContentPane().add(lblNewLabel);
+	}
+}
+
+
+        
     }//GEN-LAST:event_button_ShiftCancelApActionPerformed
 
     private void combobox_MakeA_distanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combobox_MakeA_distanceActionPerformed
@@ -772,4 +1009,8 @@ public class Startpage extends javax.swing.JFrame {
     int distance2;
     int distance3;
     int distance4;
+
+    private void LogIn_extends_JFrame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
