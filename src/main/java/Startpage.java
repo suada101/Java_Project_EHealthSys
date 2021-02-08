@@ -5,7 +5,7 @@ import deleteChangeFunction.windowR;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import otherclasses.Doctor;
+import doctor.Doctor;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -563,7 +563,7 @@ public class Startpage extends javax.swing.JFrame {
     //</editor-fold>
 
 
-    //GEN-LAST:event_button_testActionPerformed
+//GEN-LAST:event_button_testActionPerformed
 
     private void pwfield_LogIn_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwfield_LogIn_passwordActionPerformed
         // TODO add your handling code here:
