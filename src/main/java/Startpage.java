@@ -9,30 +9,18 @@ import otherclasses.Doctor;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import java.awt.FlowLayout;
-import javax.swing.BoxLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-import java.awt.BorderLayout;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.util.ArrayList;
 import javax.swing.JPasswordField;
 import javax.swing.JCheckBox;
-import javax.swing.JTextPane;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -50,7 +38,42 @@ import java.sql.Statement;
  */
 public class Startpage extends javax.swing.JFrame {
 
-    
+    private javax.swing.JLayeredPane LogInPane;
+    private javax.swing.JLayeredPane MakeAPane;
+    private javax.swing.JScrollPane ScrollPane_MakeA_list;
+    private javax.swing.JLayeredPane SelectionPane;
+    private javax.swing.JButton button_ExportToPdf;
+    private javax.swing.JButton button_MakeA_send;
+    private javax.swing.JButton button_MakeAppointment;
+    private javax.swing.JButton button_ShiftCancelAp;
+    private javax.swing.JButton button_test;
+    private javax.swing.JComboBox<String> combo_MakeA_healthproblem;
+    private javax.swing.JComboBox<String> combobox_MakeA_distance;
+    private javax.swing.JComboBox<String> combobox_MakeA_type;
+    private javax.swing.JComboBox<String> comboboy_MakeA_time;
+    private javax.swing.JLabel lbl_email;
+    private javax.swing.JLabel lbl_password;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel label_MakeA_adressinfo;
+    private javax.swing.JLabel label_MakeA_bday;
+    private javax.swing.JLabel label_MakeA_heading1;
+    private javax.swing.JLabel label_MakeA_heading2;
+    private javax.swing.JLabel label_MakeA_healthinfo;
+    private javax.swing.JLabel label_MakeA_insurancename;
+    private javax.swing.JLabel label_MakeA_name;
+    private javax.swing.JLabel label_MakeA_reminder;
+    private javax.swing.JLabel label_MakeA_type;
+    private javax.swing.JLabel label_test;
+    private javax.swing.JList<String> list_MakeA_doctorlist;
+    private javax.swing.JLabel loginpic;
+    private javax.swing.JPasswordField pwfield_LogIn_password;
+    private javax.swing.JLayeredPane startseite;
+    private javax.swing.JTextField txtfield_LogIn_email;
+    private javax.swing.JTextField txtfield_MakeA_adressinfo;
+    private javax.swing.JTextField txtfield_MakeA_bday;
+    private javax.swing.JTextField txtfield_MakeA_healthinfo;
+    private javax.swing.JTextField txtfield_MakeA_insurancename;
+    private javax.swing.JTextField txtfield_MakeA_name;
 
     /**
      * Creates new form Startpage
@@ -75,9 +98,9 @@ public class Startpage extends javax.swing.JFrame {
         label_test = new javax.swing.JLabel();
         button_test = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lbl_email = new javax.swing.JLabel();
         txtfield_LogIn_email = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        lbl_password = new javax.swing.JLabel();
         pwfield_LogIn_password = new javax.swing.JPasswordField();
         loginpic = new javax.swing.JLabel();
         SelectionPane = new javax.swing.JLayeredPane();
@@ -123,18 +146,18 @@ public class Startpage extends javax.swing.JFrame {
         button_test.setText("Log in ");
         button_test.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_testActionPerformed(evt);
+                handleLoginBtn(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         jLabel3.setText("EHS SYSTEM");
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel10.setText("Email");
+        lbl_email.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lbl_email.setText("Email");
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel11.setText("Password");
+        lbl_password.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lbl_password.setText("Password");
 
         pwfield_LogIn_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,9 +168,9 @@ public class Startpage extends javax.swing.JFrame {
         startseite.setLayer(label_test, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(button_test, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        startseite.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        startseite.setLayer(lbl_email, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(txtfield_LogIn_email, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        startseite.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        startseite.setLayer(lbl_password, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(pwfield_LogIn_password, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(loginpic, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -165,7 +188,7 @@ public class Startpage extends javax.swing.JFrame {
                 .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(startseiteLayout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_password, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
                         .addGap(69, 69, 69)
@@ -176,7 +199,7 @@ public class Startpage extends javax.swing.JFrame {
                                     .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(104, 104, 104))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_email, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(76, 76, 76))))))
             .addGroup(startseiteLayout.createSequentialGroup()
                 .addGap(189, 189, 189)
@@ -197,11 +220,11 @@ public class Startpage extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(txtfield_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
+                        .addComponent(lbl_email)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel11)
+                        .addComponent(lbl_password)
                         .addGap(40, 40, 40))
                     .addGroup(startseiteLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -511,138 +534,36 @@ public class Startpage extends javax.swing.JFrame {
        
     }//GEN-LAST:event_button_MakeA_sendActionPerformed
 
-    private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
-        //MAHI CODE
-        /* String password = String.valueOf(pwfield_LogIn_password.getPassword()); // Casting von char[] zu String
-        //statt "suada" und "abc" variablen zur Datenbank hinzufügen
-        if( !"suada".equals(txtfield_LogIn_email.getText()) || !"abc".equals(password)){
-            JOptionPane.showMessageDialog(null,"Email or password is false");
+
+    //<editor-fold desc="Mahis Code">
+    /**
+     *
+     * @param evt
+     */
+    private void handleLoginBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
+        String email = txtfield_LogIn_email.getText();
+        String password = String.valueOf(pwfield_LogIn_password.getPassword());
+
+        if(password.isEmpty() && !email.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please Type in a Password!", "Attention", JOptionPane.CANCEL_OPTION);
+        }
+        else if(email.isEmpty() && !password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please type in a Username!", "Attention", JOptionPane.CANCEL_OPTION);
+        }
+        else if (email.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please type in a Username and a Password!", "Attention", JOptionPane.CANCEL_OPTION);
         } else {
-            
-            
-            //Das alles soll passieren, wenn man erfolgreich eingelogt ist
-            button_test.setVisible(false);
-            label_test.setVisible(false);
+            // Überprüfung der eingebenen Daten
+            // TODO
+
             SelectionPane.setVisible(true);
             startseite.setVisible(false);
-            LogInPane.setVisible(false);
-        }*/
-            
-            button_test.setVisible(false);
-            label_test.setVisible(false);
-            SelectionPane.setVisible(true);
-            startseite.setVisible(false);
-            LogInPane.setVisible(false);
-        
-            
-        /// MAHIS PART START
-        EventQueue.invokeLater(() -> {
-            try {
-                LogIn_extends_JFrame frame = new LogIn_extends_JFrame();
-                frame.setVisible(true);
-            } catch (Exception e) {
-            }
-        });    
-        
-         LogIn_extends_JFrame();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 300);
-        JPanel contentPane = new JPanel();
-		contentPane.setBorder(null);
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblUsername = new JLabel("Username:");
-		lblUsername.setFont(new Font("Barlow", Font.PLAIN, 14));
-		lblUsername.setBounds(172, 82, 88, 13);
-		contentPane.add(lblUsername);
-		
-		JLabel lblPassword = new JLabel("Password:");
-		lblPassword.setFont(new Font("Barlow", Font.PLAIN, 14));
-		lblPassword.setBounds(172, 123, 88, 13);
-		contentPane.add(lblPassword);
-		
-        JTextField usernameTextField = new JTextField();
-		usernameTextField.setBounds(247, 81, 140, 19);
-		contentPane.add(usernameTextField);
-		usernameTextField.setColumns(10);
-		
-        JPasswordField passwordTextField = new JPasswordField();
-	passwordTextField.setBounds(247, 122, 140, 19);
-		contentPane.add(passwordTextField);
-		
-		
-		
-		JButton btnLogin = new JButton("Login");
-		btnLogin.setForeground(new Color(255, 255, 255));
-		btnLogin.setBackground(new Color(30, 144, 255));
-		btnLogin.setFont(new Font("Barlow SemiBold", Font.PLAIN, 15));
-		btnLogin.addActionListener((ActionEvent e) -> {
-                    String un = usernameTextField.getText();
-                    String pw = passwordTextField.getText();
-                    
-                    if(pw.isEmpty() && un.isEmpty() == false){
-                        JOptionPane.showMessageDialog(null, "Please Type in a Password!", "Attention", JOptionPane.CANCEL_OPTION);
-                    }
-                    else if(un.isEmpty() && pw.isEmpty() == false){
-                        JOptionPane.showMessageDialog(null, "Please type in a Username!", "Attention", JOptionPane.CANCEL_OPTION);
-                    }
-                    else if(un.isEmpty() && pw.isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Please type in a Username and a Password!", "Attention", JOptionPane.CANCEL_OPTION);
-                    }
-                    else {
-                        
-                        
-                        
-                        
-                        
-                        try {
-                            Statement stmt = null;
-                           // stmt = /null/query.createStatement();
-                            String sql = "SELECT username, password FROM login where username = '"+ un+"' and binary password = '"+ pw +"'";
-                            ResultSet rs = stmt.executeQuery(sql);
-                            if(rs.next()){
-                                JOptionPane.showMessageDialog(null,"Hello, welcome back.","Welcome!", JOptionPane.DEFAULT_OPTION);
-                                // If username and password are correct, then next procedure will be forwarding to next Frame for example Menu
-                            }
-                        } catch (SQLException ex) {
-                            JOptionPane.showMessageDialog(null,"Your credentials are incorrect!\nPlease try again.","Error!", JOptionPane.DEFAULT_OPTION);
-                        }
-                        
-                        
-                    }
-                });
-        
-                
-                btnLogin.setBounds(247, 156, 94, 27);
-		contentPane.add(btnLogin);
-		
-		JCheckBox chckbxShowpPassword = new JCheckBox("Show Password");
-		chckbxShowpPassword.setFont(new Font("Barlow", Font.PLAIN, 11));
-		chckbxShowpPassword.addActionListener((ActionEvent e) -> {
-                    if(chckbxShowpPassword.isSelected()) {
-                        passwordTextField.setEchoChar((char)0);
-                    }
-                    else {
-                        passwordTextField.setEchoChar('*');
-                    }
-        });
-                
-                chckbxShowpPassword.setBounds(396, 119, 140, 21);
-		contentPane.add(chckbxShowpPassword);
-		
-		JLabel lblApplicationName = new JLabel("Application Name");
-		lblApplicationName.setHorizontalAlignment(SwingConstants.CENTER);
-		lblApplicationName.setFont(new Font("Barlow SemiBold", Font.PLAIN, 15));
-		lblApplicationName.setBounds(10, 29, 586, 13);
-		contentPane.add(lblApplicationName);
-		
-		
-	
-                
-            
-        
-    }//GEN-LAST:event_button_testActionPerformed
+        }
+    }
+    //</editor-fold>
+
+
+    //GEN-LAST:event_button_testActionPerformed
 
     private void pwfield_LogIn_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwfield_LogIn_passwordActionPerformed
         // TODO add your handling code here:
@@ -967,42 +888,7 @@ class windowR {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLayeredPane LogInPane;
-    private javax.swing.JLayeredPane MakeAPane;
-    private javax.swing.JScrollPane ScrollPane_MakeA_list;
-    private javax.swing.JLayeredPane SelectionPane;
-    private javax.swing.JButton button_ExportToPdf;
-    private javax.swing.JButton button_MakeA_send;
-    private javax.swing.JButton button_MakeAppointment;
-    private javax.swing.JButton button_ShiftCancelAp;
-    private javax.swing.JButton button_test;
-    private javax.swing.JComboBox<String> combo_MakeA_healthproblem;
-    private javax.swing.JComboBox<String> combobox_MakeA_distance;
-    private javax.swing.JComboBox<String> combobox_MakeA_type;
-    private javax.swing.JComboBox<String> comboboy_MakeA_time;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel label_MakeA_adressinfo;
-    private javax.swing.JLabel label_MakeA_bday;
-    private javax.swing.JLabel label_MakeA_heading1;
-    private javax.swing.JLabel label_MakeA_heading2;
-    private javax.swing.JLabel label_MakeA_healthinfo;
-    private javax.swing.JLabel label_MakeA_insurancename;
-    private javax.swing.JLabel label_MakeA_name;
-    private javax.swing.JLabel label_MakeA_reminder;
-    private javax.swing.JLabel label_MakeA_type;
-    private javax.swing.JLabel label_test;
-    private javax.swing.JList<String> list_MakeA_doctorlist;
-    private javax.swing.JLabel loginpic;
-    private javax.swing.JPasswordField pwfield_LogIn_password;
-    private javax.swing.JLayeredPane startseite;
-    private javax.swing.JTextField txtfield_LogIn_email;
-    private javax.swing.JTextField txtfield_MakeA_adressinfo;
-    private javax.swing.JTextField txtfield_MakeA_bday;
-    private javax.swing.JTextField txtfield_MakeA_healthinfo;
-    private javax.swing.JTextField txtfield_MakeA_insurancename;
-    private javax.swing.JTextField txtfield_MakeA_name;
+
     // End of variables declaration//GEN-END:variables
     int distance;
     int distance1;
@@ -1010,7 +896,4 @@ class windowR {
     int distance3;
     int distance4;
 
-    private void LogIn_extends_JFrame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
