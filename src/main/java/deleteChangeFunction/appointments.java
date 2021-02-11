@@ -6,6 +6,7 @@ public class appointments {
 	String name;
 	String description;
 	String date;
+        int appcnt=0;
 	
 	public appointments() {
 		this.name= null;
@@ -18,6 +19,8 @@ public class appointments {
 		this.description=y;
 		this.date=z;
 	}
+        
+        
 
 	public String getName() {
 		return name;

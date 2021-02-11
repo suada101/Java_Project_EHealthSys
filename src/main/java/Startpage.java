@@ -504,16 +504,11 @@ public class Startpage extends javax.swing.JFrame {
        int i;
        // txtfield_name.getText().isEmpty()
        if( (!txtfield_MakeA_name.getText().isEmpty()) && (!txtfield_MakeA_adressinfo.getText().isEmpty()) && (!txtfield_MakeA_bday.getText().isEmpty()) && (!txtfield_MakeA_healthinfo.getText().isEmpty()) && (!txtfield_MakeA_insurancename.getText().isEmpty()) ) {
-           //Datenspeichern in Datenbank 
-           
-           
-           //
-          /* Doctor.KM2.name*/
-          
-         
-           
-           
+        //SUADAS CODE    
+        //Datenspeichern in Datenbank von Stipe 
+            
            JOptionPane.showMessageDialog(null,"Appointment is send.");
+           AppointmentCount.appointmentcnt.setappcnt(); //Count wird plus eins genommen
            MakeAPane.setVisible(false);
            SelectionPane.setVisible(true);
        } else {
