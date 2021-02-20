@@ -520,18 +520,18 @@ public class Startpage extends javax.swing.JFrame {
                
                //Statement st = conn.createStatement();
                
-               String sql_query = "insert into person (fname,adress,birthday,healthInfo,insuranceType,insuranceName,reminder,appointmentDate)values(?,?,?,?,?,?,?,?)";
+               String sql_query = "insert into person (fname,adress,birthday,healthInfo,insuranceType,insuranceName) values (?,?,?,?,?,?)";
                PreparedStatement pstmt = conn.prepareStatement(sql_query);
-               pstmt.setString(2,db_fname);
-               pstmt.setString(3,db_adress);
-               pstmt.setString(4,db_birthday);
-               pstmt.setString(5,db_healthInfo);
+               pstmt.setString(1,db_fname);
+               pstmt.setString(2,db_adress);
+               pstmt.setString(3,db_birthday);
+               pstmt.setString(4,db_healthInfo);
                if(db_insurance_type_no == 0){
-                   pstmt.setString(6,"private");
+                   pstmt.setString(5,"private");
                } else {
-                   pstmt.setString(6,"public");
+                   pstmt.setString(5,"public");
                }
-               pstmt.setString(5,db_insuranceName);
+               pstmt.setString(6,db_insuranceName);
             //  pstmt.executeUpdate();
               pstmt.executeUpdate(sql_query);
                //pstmt.executeQuery(sql_query);
