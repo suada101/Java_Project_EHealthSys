@@ -1,4 +1,5 @@
 
+import database.DatabaseAppointment;
 import deleteChangeFunction.windowCancel;
 import deleteChangeFunction.windowChange;
 import deleteChangeFunction.windowR;
@@ -9,21 +10,19 @@ import doctor.Doctor;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.JPasswordField;
-import javax.swing.JCheckBox;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /*
@@ -84,6 +83,7 @@ public class Startpage extends javax.swing.JFrame {
         initComponents();
         SelectionPane.setVisible(false);
         MakeAPane.setVisible(false);
+        //DataSavedIntoDatabase db = new DataSavedIntoDatabase();
     }
 
     /**
@@ -104,7 +104,7 @@ public class Startpage extends javax.swing.JFrame {
         txtfield_LogIn_email = new javax.swing.JTextField();
         label_LogIn_password = new javax.swing.JLabel();
         pwfield_LogIn_password = new javax.swing.JPasswordField();
-        loginpic = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         SelectionPane = new javax.swing.JLayeredPane();
         button_MakeAppointment = new javax.swing.JButton();
         button_ShiftCancelAp = new javax.swing.JButton();
@@ -167,6 +167,8 @@ public class Startpage extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("<Bild>");
+
         startseite.setLayer(label_LogIn_text1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(button_test, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(label_LogIn_text2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -174,41 +176,36 @@ public class Startpage extends javax.swing.JFrame {
         startseite.setLayer(txtfield_LogIn_email, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(label_LogIn_password, javax.swing.JLayeredPane.DEFAULT_LAYER);
         startseite.setLayer(pwfield_LogIn_password, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        startseite.setLayer(loginpic, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        startseite.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout startseiteLayout = new javax.swing.GroupLayout(startseite);
         startseite.setLayout(startseiteLayout);
         startseiteLayout.setHorizontalGroup(
             startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(button_test, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120))
             .addGroup(startseiteLayout.createSequentialGroup()
                 .addGap(189, 189, 189)
                 .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label_LogIn_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_LogIn_text2))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 215, Short.MAX_VALUE))
             .addGroup(startseiteLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(loginpic, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(startseiteLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(label_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(startseiteLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
                         .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
-                                .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtfield_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(104, 104, 104))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
-                                .addComponent(label_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(76, 76, 76))))))
+                            .addComponent(txtfield_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
+                        .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button_test, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(118, 118, 118))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
+                        .addComponent(label_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76))))
         );
         startseiteLayout.setVerticalGroup(
             startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,21 +214,18 @@ public class Startpage extends javax.swing.JFrame {
                 .addComponent(label_LogIn_text1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label_LogIn_text2)
+                .addGap(36, 36, 36)
                 .addGroup(startseiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                    .addGroup(startseiteLayout.createSequentialGroup()
                         .addComponent(txtfield_LogIn_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(label_LogIn_email)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(pwfield_LogIn_password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(label_LogIn_password)
-                        .addGap(40, 40, 40))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startseiteLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(loginpic, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)))
+                        .addComponent(label_LogIn_password))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
                 .addComponent(button_test, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
@@ -507,10 +501,66 @@ public class Startpage extends javax.swing.JFrame {
        // txtfield_name.getText().isEmpty()
        if( (!txtfield_MakeA_name.getText().isEmpty()) && (!txtfield_MakeA_adressinfo.getText().isEmpty()) && (!txtfield_MakeA_bday.getText().isEmpty()) && (!txtfield_MakeA_healthinfo.getText().isEmpty()) && (!txtfield_MakeA_insurancename.getText().isEmpty()) ) {
         //SUADAS CODE    
-        //Datenspeichern in Datenbank von Stipe 
+        //Datenspeichern in Datenbank  
+        
+        
+        // In Variablen speichern
+           String db_fname = txtfield_MakeA_name.getText();
+           String db_adress = txtfield_MakeA_adressinfo.getText();
+           String db_birthday = txtfield_MakeA_bday.getText();
+           String db_healthInfo = txtfield_MakeA_healthinfo.getText();
+           String db_insuranceName = txtfield_MakeA_insurancename.getText();
+           int db_insurance_type_no = combobox_MakeA_type.getItemCount();
+           
+           try {
+               //Connection Datenbank Datei
+               
+               Class.forName("com.mysql.cj.jdbc.Driver");
+               Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e-health-system-database?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin","root","FB2_infoDB");
+               
+               //Statement st = conn.createStatement();
+               
+               String sql_query = "insert into person (fname,adress,birthday,healthInfo,insuranceType,insuranceName,reminder,appointmentDate)values(?,?,?,?,?,?,?,?)";
+               PreparedStatement pstmt = conn.prepareStatement(sql_query);
+               pstmt.setString(2,db_fname);
+               pstmt.setString(3,db_adress);
+               pstmt.setString(4,db_birthday);
+               pstmt.setString(5,db_healthInfo);
+               if(db_insurance_type_no == 0){
+                   pstmt.setString(6,"private");
+               } else {
+                   pstmt.setString(6,"public");
+               }
+               pstmt.setString(5,db_insuranceName);
+            //  pstmt.executeUpdate();
+              pstmt.executeUpdate(sql_query);
+               //pstmt.executeQuery(sql_query);
+               conn.commit();
+               DatabaseAppointment newAppointment = new DatabaseAppointment();
+               newAppointment.fname = txtfield_MakeA_name.getText();
+               newAppointment.adress = txtfield_MakeA_adressinfo.getText();
+               newAppointment.birthday = txtfield_MakeA_bday.getText();
+               newAppointment.healthInfo = txtfield_MakeA_healthinfo.getText();
+               newAppointment.insuranceName = txtfield_MakeA_insurancename.getText();
+              // newAppointment.insuranceType = combobox_MakeA_type.getItemCount();
+    
+               
+               
+               
+               
+               
+               
+               
             
+           } catch ( SQLException e) {
+              JOptionPane.showMessageDialog(null,e);
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(Startpage.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       
            JOptionPane.showMessageDialog(null,"Appointment is send.");
            AppointmentCount.appointmentcnt.setappcnt(); //Count wird plus eins genommen
+           
            MakeAPane.setVisible(false);
            SelectionPane.setVisible(true);
        } else {
@@ -878,6 +928,8 @@ class windowR {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Startpage().setVisible(true);
+               
+                
             }
         });
     }
@@ -896,6 +948,7 @@ class windowR {
     private javax.swing.JComboBox<String> combobox_MakeA_distance;
     private javax.swing.JComboBox<String> combobox_MakeA_type;
     private javax.swing.JComboBox<String> comboboy_MakeA_time;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_LogIn_email;
     private javax.swing.JLabel label_LogIn_password;
     private javax.swing.JLabel label_LogIn_text1;
@@ -910,7 +963,6 @@ class windowR {
     private javax.swing.JLabel label_MakeA_reminder;
     private javax.swing.JLabel label_MakeA_type;
     private javax.swing.JList<String> list_MakeA_doctorlist;
-    private javax.swing.JLabel loginpic;
     private javax.swing.JPasswordField pwfield_LogIn_password;
     private javax.swing.JLayeredPane startseite;
     private javax.swing.JTextField txtfield_LogIn_email;
