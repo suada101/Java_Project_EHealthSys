@@ -1,6 +1,6 @@
 
 import database.DatabaseAppointment;
-import deleteChangeFunction.CountofAppointments;
+import deleteChangeFunction.*;
 import deleteChangeFunction.windowCancel;
 import deleteChangeFunction.windowChange;
 import deleteChangeFunction.windowR;

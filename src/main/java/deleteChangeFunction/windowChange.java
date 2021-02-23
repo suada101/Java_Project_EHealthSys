@@ -55,14 +55,11 @@ public class windowChange {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		
-		appointmentsListe.add(new appointments("Nora","KA","12324"));
-		appointmentsListe.add(new appointments("Pedro","KA","22"));
-		appointmentsListe.add(new appointments("Sardar","KA","333"));
-		appointmentsListe.add(new appointments("O","KA","444"));
+		
 
 		JButton btnNewButton = new JButton("Back");
 		btnNewButton.setBounds(71, 179, 85, 21);
@@ -102,7 +99,8 @@ public class windowChange {
 		table.setCellSelectionEnabled(true);
 		model.addColumn("name");
 		model.addColumn("Text");
-		model.insertRow(model.getRowCount(), new Object[] {"nora","hola"});
+                // User name von Datenbank
+		model.insertRow(model.getRowCount(), new Object[] {"User","<Neues Datum>"});
 		
 //		Object rowData[] = new Object[4];
 //		for(int i = 0; i< appointmentsListe.size(); i++) {

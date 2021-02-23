@@ -72,7 +72,7 @@ public class windowCancel {
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnNewButton = new JButton("Back");

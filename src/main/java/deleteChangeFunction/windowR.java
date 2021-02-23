@@ -28,6 +28,7 @@ public class windowR {
 				try {
 					windowR window = new windowR();
 					window.frame.setVisible(true);
+                                        window.frame.dispose();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -60,6 +61,7 @@ public class windowR {
 				windowCancel cancel = new windowCancel();
 				cancel.cancelMain();
 				frame.setVisible(false);
+                                
 			}
 			
 			
