@@ -25,6 +25,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import deleteChangeFunction.*;
+import java.sql.ResultSet;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -873,34 +874,30 @@ class windowR {
     }//GEN-LAST:event_combobox_MakeA_distanceActionPerformed
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
-        //MAHI CODE gönnt euch 
-    	//Database connection mit treiber und allgemein datenbank
-    	
-    	
-    	//Connection Datenbank Datei
+        try {
+            //MAHI CODE
+            //Database connection mit treiber und allgemein datenbank
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e-health-system-database?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin","root","FB2_infoDB");
+            //create Statement
+             Statement st = conn.createStatement();
+            String sql_query2 = "SELECT FROM person (email,password) VALUES (?,?)";
+            //execute query and get results
+            ResultSet rs = st.executeQuery(sql_query2);
+            
+            while(rs.next()){
+            String username = rs.getString("email");
+            String password = rs.getString("password");
+            
         
-      // Class.forName("com.mysql.cj.jdbc.Driver");
-       //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e-health-system-database?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin","root","FB2_infoDB");
-        
-      // Statement st = conn.createStatement();
-        
-     // String sql_query2 = "SELECT FROM person (email,password) VALUES (?,?)";
-      // PreparedStatement pstm2 = conn.prepareStatement(sql_query2);
-    	
-    	
-    	
-    	
-    	
-        String email = txtfield_LogIn_email.getText();
-        String password = String.valueOf(pwfield_LogIn_password.getPassword());
 
-        if(password.isEmpty() && !email.isEmpty()){
+        if(password.isEmpty() && !username.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please Type in a Password!", "Attention", JOptionPane.CANCEL_OPTION);
         }
-        else if(email.isEmpty() && !password.isEmpty()) {
+        else if(username.isEmpty() && !password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please type in a Username!", "Attention", JOptionPane.CANCEL_OPTION);
         }
-        else if (email.isEmpty()) {
+        else if (username.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please type in a Username and a Password!", "Attention", JOptionPane.CANCEL_OPTION);
         } else {
             // Überprüfung der eingebenen Daten
@@ -908,6 +905,18 @@ class windowR {
             SelectionPane.setVisible(true);
             startseite.setVisible(false);
         }
+            
+            
+        st.close();    
+            }
+            
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Startpage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    	
         
         
     }//GEN-LAST:event_button_testActionPerformed
