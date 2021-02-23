@@ -520,8 +520,9 @@ public class Startpage extends javax.swing.JFrame {
                
                //Statement st = conn.createStatement();
                
-               String sql_query = "insert into person (fname,adress,birthday,healthInfo,insuranceType,insuranceName) values (?,?,?,?,?,?)";
+               String sql_query = "INSERT INTO person (fname,adress,birthday,healthInfo,insuranceType,insuranceName,reminder,appointmentDate,doctor) VALUES (?,?,?,?,?,?,?,?,?)";
                PreparedStatement pstmt = conn.prepareStatement(sql_query);
+         
                pstmt.setString(1,db_fname);
                pstmt.setString(2,db_adress);
                pstmt.setString(3,db_birthday);
@@ -532,10 +533,13 @@ public class Startpage extends javax.swing.JFrame {
                    pstmt.setString(5,"public");
                }
                pstmt.setString(6,db_insuranceName);
-            //  pstmt.executeUpdate();
-              pstmt.executeUpdate(sql_query);
+               pstmt.setString(7, "3 days");
+               pstmt.setString(8, "21.05.2021");
+               pstmt.setString(9, "Mahida Ahma/ed");
+               pstmt.executeUpdate();
+              //pstmt.executeUpdate(sql_query);
                //pstmt.executeQuery(sql_query);
-               conn.commit();
+               //conn.commit();
                DatabaseAppointment newAppointment = new DatabaseAppointment();
                newAppointment.fname = txtfield_MakeA_name.getText();
                newAppointment.adress = txtfield_MakeA_adressinfo.getText();

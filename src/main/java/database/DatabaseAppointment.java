@@ -22,7 +22,7 @@ public class DatabaseAppointment {
     public static String doctor; 
     
     int i;
-    DatabaseAppointment newAppointment2 = new DatabaseAppointment();
+  //  DatabaseAppointment newAppointment2 = new DatabaseAppointment();
     
     
     
