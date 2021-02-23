@@ -1,5 +1,6 @@
 
 import database.DatabaseAppointment;
+import deleteChangeFunction.CountofAppointments;
 import deleteChangeFunction.windowCancel;
 import deleteChangeFunction.windowChange;
 import deleteChangeFunction.windowR;
@@ -23,7 +24,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import deleteChangeFunction;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -547,11 +548,7 @@ public class Startpage extends javax.swing.JFrame {
                newAppointment.healthInfo = txtfield_MakeA_healthinfo.getText();
                newAppointment.insuranceName = txtfield_MakeA_insurancename.getText();
               // newAppointment.insuranceType = combobox_MakeA_type.getItemCount();
-    
-               
-               
-               
-               
+  
                
                
                
@@ -563,10 +560,11 @@ public class Startpage extends javax.swing.JFrame {
            }
        
            JOptionPane.showMessageDialog(null,"Appointment is send.");
-           AppointmentCount.appointmentcnt.setappcnt(); //Count wird plus eins genommen
+           CountofAppointments.cntofapp.setappcnt(); //Count wird plus eins genommen
            
            MakeAPane.setVisible(false);
            SelectionPane.setVisible(true);
+           MakeAPane.setVisible(false);
        } else {
            JOptionPane.showMessageDialog(null,"You need to fill out everything.");
        }
@@ -577,11 +575,7 @@ public class Startpage extends javax.swing.JFrame {
     }//GEN-LAST:event_button_MakeA_sendMouseReleased
 
     private void button_MakeA_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MakeA_sendActionPerformed
-       //Save data to database
-       
-       // So bekommt man allgemein die eingabe
-
-       //test.setText(txtfield_name.getText());
+ 
        
     }//GEN-LAST:event_button_MakeA_sendActionPerformed
 
@@ -879,7 +873,24 @@ class windowR {
     }//GEN-LAST:event_combobox_MakeA_distanceActionPerformed
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
+        //MAHI CODE gönnt euch 
+    	//Database connection mit treiber und allgemein datenbank
+    	
+    	
+    	//Connection Datenbank Datei
         
+      // Class.forName("com.mysql.cj.jdbc.Driver");
+       //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e-health-system-database?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin","root","FB2_infoDB");
+        
+      // Statement st = conn.createStatement();
+        
+     // String sql_query2 = "SELECT FROM person (email,password) VALUES (?,?)";
+      // PreparedStatement pstm2 = conn.prepareStatement(sql_query2);
+    	
+    	
+    	
+    	
+    	
         String email = txtfield_LogIn_email.getText();
         String password = String.valueOf(pwfield_LogIn_password.getPassword());
 

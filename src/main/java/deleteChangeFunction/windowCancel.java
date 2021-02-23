@@ -3,6 +3,7 @@ package deleteChangeFunction;
 
 //import AppointmentCount;
 import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -13,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 
 
 public class windowCancel {
@@ -52,22 +52,21 @@ public class windowCancel {
 	 */
 	private void initialize() {
 		DefaultListModel<appointments> LISTE = new DefaultListModel<>();
-		appointments m = new appointments("Nora","1234","Appointment 1");
-                /*
+		appointments m = new appointments("User","1234","Cancel Appointment");
+       /*       
 		appointmentsTmp.addElement("Appointment 1");
 		appointmentsTmp.addElement("Appointment 2");
 		appointmentsTmp.addElement("Appointment 3");
 		appointmentsTmp.addElement("Appointment 4");
-		appointmentsTmp.addElement("Appointment 5");*/
-                int i;
-               /*
-                for(i=0;i!=AppointmentCount.appointmentcnt.getappcnt();i++){
-                    // Connection zur Datenbank/Datei
-                   
+		appointmentsTmp.addElement("Appointment 5"); */
+		
+        int i;
+       int anzahl = CountofAppointments.cntofapp.getappcnt();
+            
+        for(i=0;i!=anzahl;i++){
                    //Healthproblem als addElement     
-                  appointmentsTmp.addElement("Appointment/Healthproblem "+(i+1))
-                   appointmentsTmp   
-                }  */
+                  appointmentsTmp.addElement("Appointment/Healthproblem "+(i+1)); 
+                }  
        
 
 		frame = new JFrame();
