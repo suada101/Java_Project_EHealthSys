@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import deleteChangeFunction;
+import deleteChangeFunction.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -777,7 +777,7 @@ public class Startpage extends javax.swing.JFrame {
     }//GEN-LAST:event_combo_MakeA_healthproblemActionPerformed
 
     private void button_ShiftCancelApActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ShiftCancelApActionPerformed
-        //Noras CODE
+      
          
         
 EventQueue.invokeLater(new Runnable() {

@@ -65,7 +65,8 @@ public class windowCancel {
             
         for(i=0;i!=anzahl;i++){
                    //Healthproblem als addElement     
-                  appointmentsTmp.addElement("Appointment/Healthproblem "+(i+1)); 
+                  appointmentsTmp.addElement("Appointment "+ (i+1)); 
+                  
                 }  
        
 
@@ -103,6 +104,7 @@ public class windowCancel {
 			public void actionPerformed(ActionEvent e) {
 				//delete-function
 				appointmentsTmp.remove(list.getSelectedIndex());
+				CountofAppointments.cntofapp.modifiedappcnt = CountofAppointments.cntofapp.appcnt - 1; //Gesamt count wird minus 1 genommen
 
 			}
 		});

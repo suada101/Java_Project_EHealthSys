@@ -9,7 +9,8 @@
  * @author suada
  */
 public class AppointmentCount {
-    int appcnt = 0;    
+    int appcnt = 0; 
+    int modifiedappcnt= appcnt;
 
 
     public int getappcnt(){
