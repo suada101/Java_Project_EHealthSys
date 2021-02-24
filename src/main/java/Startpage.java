@@ -8,6 +8,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import doctor.Doctor;
+import exportToPdf.Generate_PDF;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -85,7 +86,7 @@ public class Startpage extends javax.swing.JFrame {
         initComponents();
         SelectionPane.setVisible(false);
         MakeAPane.setVisible(false);
-        //DataSavedIntoDatabase db = new DataSavedIntoDatabase();
+ 
     }
 
     /**
@@ -496,6 +497,10 @@ public class Startpage extends javax.swing.JFrame {
 
     private void button_ExportToPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ExportToPdfActionPerformed
         // SARDARS CODE
+    	Generate_PDF ExportToPDF = new Generate_PDF();
+    	
+    	
+    	
     }//GEN-LAST:event_button_ExportToPdfActionPerformed
 
     private void button_MakeAppointmentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_MakeAppointmentMousePressed
@@ -518,6 +523,27 @@ public class Startpage extends javax.swing.JFrame {
            String db_healthInfo = txtfield_MakeA_healthinfo.getText();
            String db_insuranceName = txtfield_MakeA_insurancename.getText();
            int db_insurance_type_no = combobox_MakeA_type.getItemCount();
+           int db_reminder_no = comboboy_MakeA_time.getItemCount();
+           String db_reminder;
+           
+           if(db_reminder_no == 0) {
+        	  db_reminder = "10 minutes";
+          }
+          
+           else if(db_reminder_no == 1) {
+        	  db_reminder = "1 hour";
+          }
+          
+           else if(db_reminder_no == 2) {
+        	  db_reminder = "3 days";
+          }else  {
+        	  db_reminder = "1 week";
+          } 
+          
+          String db_doctor = list_MakeA_doctorlist.getSelectedValue().toString();
+          
+          
+          
            
            try {
                //Connection Datenbank Datei
@@ -539,10 +565,10 @@ public class Startpage extends javax.swing.JFrame {
                } else {
                    pstmt.setString(5,"public");
                }
-               pstmt.setString(6,db_insuranceName);
-               pstmt.setString(7, "3 days");
+               pstmt.setString(6,db_insuranceName);      
+               pstmt.setString(7,db_reminder);
                pstmt.setString(8, "21.05.2021");
-               pstmt.setString(9, "Mahida Ahma/ed");
+               pstmt.setString(9, db_doctor);
                pstmt.executeUpdate();
               //pstmt.executeUpdate(sql_query);
                //pstmt.executeQuery(sql_query);
