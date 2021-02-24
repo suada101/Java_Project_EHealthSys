@@ -150,7 +150,12 @@ public class Startpage extends javax.swing.JFrame {
         button_test.setText("Log in ");
         button_test.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_testActionPerformed(evt);
+                try {
+					button_testActionPerformed(evt);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -873,53 +878,56 @@ class windowR {
         // TODO add your handling code here:
     }//GEN-LAST:event_combobox_MakeA_distanceActionPerformed
 
-    private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
-        try {
+    private void button_testActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_button_testActionPerformed
+       
             //MAHI CODE
             //Database connection mit treiber und allgemein datenbank
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e-health-system-database?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin","root","FB2_infoDB");
             //create Statement
              Statement st = conn.createStatement();
-            String sql_query2 = "SELECT FROM person (email,password) VALUES (?,?)";
+             String sql_query2 = "SELECT email, password FROM person WHERE person_id = 4";
             //execute query and get results
             ResultSet rs = st.executeQuery(sql_query2);
             
-            while(rs.next()){
-            String username = rs.getString("email");
-            String password = rs.getString("password");
+            String username = null;
+            String password = null;
             
-        
+            while(rs.next()){
+                //Retrieve by column name
+                 username  = rs.getString("email");
+                 password = rs.getString("password");
+             }
 
-        if(password.isEmpty() && !username.isEmpty()){
+        
+ 
+        String Txtfield_pw = new String(pwfield_LogIn_password.getPassword());
+        String Txtfield_email = txtfield_LogIn_email.getText();
+        
+        boolean correct_email = Txtfield_email.equals(username); 
+        boolean correct_password = Txtfield_pw.equals(password); 
+        
+		if(Txtfield_pw.isEmpty() && !Txtfield_email .isEmpty()){
             JOptionPane.showMessageDialog(null, "Please Type in a Password!", "Attention", JOptionPane.CANCEL_OPTION);
         }
-        else if(username.isEmpty() && !password.isEmpty()) {
+        else if(Txtfield_email.isEmpty() && !Txtfield_pw.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please type in a Username!", "Attention", JOptionPane.CANCEL_OPTION);
         }
-        else if (username.isEmpty()) {
+        else if (Txtfield_email .isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please type in a Username and a Password!", "Attention", JOptionPane.CANCEL_OPTION);
-        } else {
-            // Überprüfung der eingebenen Daten
-            //TODO
+        } else if ( (correct_email == true) && (correct_password == true) ) {
+        	
             SelectionPane.setVisible(true);
             startseite.setVisible(false);
         }
-            
-            
-        st.close();    
-            }
-            
-            
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Startpage.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
-        
-    	
-        
-        
-    }//GEN-LAST:event_button_testActionPerformed
+            
+    }
 
     /**
      * @param args the command line arguments
