@@ -1,5 +1,5 @@
 
-import database.DatabaseAppointment;
+
 import deleteChangeFunction.*;
 import deleteChangeFunction.windowCancel;
 import deleteChangeFunction.windowChange;
@@ -7,6 +7,8 @@ import deleteChangeFunction.windowR;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+//import appointmentDatepackage.DateofAppointment;
 import doctor.Doctor;
 import exportToPdf.Generate_PDF;
 
@@ -523,24 +525,13 @@ public class Startpage extends javax.swing.JFrame {
            String db_healthInfo = txtfield_MakeA_healthinfo.getText();
            String db_insuranceName = txtfield_MakeA_insurancename.getText();
            int db_insurance_type_no = combobox_MakeA_type.getItemCount();
-           int db_reminder_no = comboboy_MakeA_time.getItemCount();
-           String db_reminder;
+           String db_doctor = list_MakeA_doctorlist.getSelectedValue();
+           int newDate = CountofAppointments.appcnt + 20210401;
            
-           if(db_reminder_no == 0) {
-        	  db_reminder = "10 minutes";
-          }
-          
-           else if(db_reminder_no == 1) {
-        	  db_reminder = "1 hour";
-          }
-          
-           else if(db_reminder_no == 2) {
-        	  db_reminder = "3 days";
-          }else  {
-        	  db_reminder = "1 week";
-          } 
-          
-          String db_doctor = list_MakeA_doctorlist.getSelectedValue().toString();
+           String db_appointmentDate = String.valueOf(newDate);
+       
+           
+           String db_reminder = String.valueOf(comboboy_MakeA_time.getSelectedItem());
           
           
           
@@ -567,20 +558,10 @@ public class Startpage extends javax.swing.JFrame {
                }
                pstmt.setString(6,db_insuranceName);      
                pstmt.setString(7,db_reminder);
-               pstmt.setString(8, "21.05.2021");
+               pstmt.setString(8,db_appointmentDate);
                pstmt.setString(9, db_doctor);
                pstmt.executeUpdate();
-              //pstmt.executeUpdate(sql_query);
-               //pstmt.executeQuery(sql_query);
-               //conn.commit();
-               DatabaseAppointment newAppointment = new DatabaseAppointment();
-               newAppointment.fname = txtfield_MakeA_name.getText();
-               newAppointment.adress = txtfield_MakeA_adressinfo.getText();
-               newAppointment.birthday = txtfield_MakeA_bday.getText();
-               newAppointment.healthInfo = txtfield_MakeA_healthinfo.getText();
-               newAppointment.insuranceName = txtfield_MakeA_insurancename.getText();
-              // newAppointment.insuranceType = combobox_MakeA_type.getItemCount();
-  
+
                
                
                

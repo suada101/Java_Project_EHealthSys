@@ -1,7 +1,7 @@
 package deleteChangeFunction;
 
 public class CountofAppointments {
-	int appcnt = 0;
+	public static int appcnt = 0;
 	protected int modifiedappcnt;    
 
 

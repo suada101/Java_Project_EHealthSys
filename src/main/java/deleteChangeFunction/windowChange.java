@@ -102,13 +102,7 @@ public class windowChange {
                 // User name von Datenbank
 		model.insertRow(model.getRowCount(), new Object[] {"User","<Neues Datum>"});
 		
-//		Object rowData[] = new Object[4];
-//		for(int i = 0; i< appointmentsListe.size(); i++) {
-//			rowData[i]= appointmentsListe.get(i).getName();
-//			rowData[i]= appointmentsListe.get(i).getDescription();
-//			rowData[i]= appointmentsListe.get(i).getDate();
-//			model.addRow(rowData);
-//		}
+
 		
 		table.setBounds(62, 32, 320, 118);
 		frame.getContentPane().add(table);
